@@ -5,7 +5,7 @@ package com.example.algorithm;
  Time Complexity:
  Space Complexity:
  */
-class MergeSort {
+class MergeSort implements Properites {
 
     private void merge(int arr[], int left, int middle, int right) {
         // Find sizes of two subarrays to be merged
@@ -85,6 +85,21 @@ class MergeSort {
 
         System.out.println("\nSorted array");
         printArray(arr);
+    }
+
+    @Override
+    public String averageTimeComplexity() {
+        return "nlog(n)";
+    }
+
+    @Override
+    public String worstTimeComplexity() {
+        return "nlog(n)";
+    }
+
+    @Override
+    public String spaceComplexity() {
+        return "n";
     }
 }
 /* This code is contributed by Rajat Mishra */
