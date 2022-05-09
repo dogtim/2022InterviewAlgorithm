@@ -1,11 +1,13 @@
-package com.example.algorithm;
+package com.example.algorithm.sorting;
+
+import com.example.algorithm.Properites;
 
 /*
  Reference: https://www.geeksforgeeks.org/merge-sort/?ref=lbp
  Time Complexity:
  Space Complexity:
  */
-class MergeSort implements Properites {
+public class MergeSort implements Properites {
 
     private void merge(int[] arr, int left, int middle, int right) {
         // Find sizes of two subarrays to be merged
@@ -51,7 +53,7 @@ class MergeSort implements Properites {
         }
     }
 
-    void sort(int[] arr, int left, int right) {
+    public void sort(int[] arr, int left, int right) {
         if (left < right) {
             // Find the middle point
             int middle = left + (right - left) / 2;

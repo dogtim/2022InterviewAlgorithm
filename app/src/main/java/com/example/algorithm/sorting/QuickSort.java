@@ -1,11 +1,13 @@
-package com.example.algorithm;
+package com.example.algorithm.sorting;
+
+import com.example.algorithm.Properites;
 
 /*
  Reference: https://www.geeksforgeeks.org/quick-sort/
  Time Complexity:
  Space Complexity:
  */
-class QuickSort implements Properites {
+public class QuickSort implements Properites {
     /* This function takes last element as pivot, places
        the pivot element at its correct position in sorted
        array, and places all smaller (smaller than pivot)
@@ -37,7 +39,7 @@ class QuickSort implements Properites {
         arr[j] = temp;
     }
 
-    void sort(int[] arr, int left, int right) {
+    public void sort(int[] arr, int left, int right) {
         if (left < right) {
 
             // pi is partitioning index, arr[p]

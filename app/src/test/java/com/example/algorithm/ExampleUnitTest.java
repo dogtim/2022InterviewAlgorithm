@@ -4,9 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import android.util.Log;
-
-import java.util.Arrays;
+import com.example.algorithm.sorting.MergeSort;
+import com.example.algorithm.sorting.QuickSort;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
