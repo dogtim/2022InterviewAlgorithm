@@ -23,4 +23,14 @@ public class ExampleUnitTest {
         int[] expectedArr = {5, 6, 7, 11, 12, 13};
         assertArrayEquals(expectedArr, arr);
     }
+
+    @Test
+    public void quick_sort() {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+
+        QuickSort sort = new QuickSort();
+        sort.sort(arr, 0, arr.length - 1);
+        int[] expectedArr = {5, 6, 7, 11, 12, 13};
+        assertArrayEquals(expectedArr, arr);
+    }
 }
