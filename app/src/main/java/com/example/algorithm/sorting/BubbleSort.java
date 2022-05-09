@@ -24,16 +24,16 @@ public class BubbleSort implements Properites {
 
     @Override
     public String averageTimeComplexity() {
-        return "nlog(n)";
+        return "n^2";
     }
 
     @Override
     public String worstTimeComplexity() {
-        return "nlog(n)";
+        return "n^2";
     }
 
     @Override
     public String spaceComplexity() {
-        return "n";
+        return "1";
     }
 }
