@@ -21,7 +21,6 @@ public class ExampleUnitTest {
         MergeSort sort = new MergeSort();
         sort.sort(arr, 0, arr.length - 1);
         int[] expectedArr = {5, 6, 7, 11, 12, 13};
-        assertEquals(Arrays.toString(expectedArr), Arrays.toString(arr));
-
+        assertArrayEquals(expectedArr, arr);
     }
 }
