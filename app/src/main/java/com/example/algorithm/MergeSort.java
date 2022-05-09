@@ -7,14 +7,14 @@ package com.example.algorithm;
  */
 class MergeSort implements Properites {
 
-    private void merge(int arr[], int left, int middle, int right) {
+    private void merge(int[] arr, int left, int middle, int right) {
         // Find sizes of two subarrays to be merged
         int leftArraySize = middle - left + 1;
         int rightArraySize = right - middle;
 
         /* Create temp arrays */
-        int leftArray[] = new int[leftArraySize];
-        int rightArray[] = new int[rightArraySize];
+        int[] leftArray = new int[leftArraySize];
+        int[] rightArray = new int[rightArraySize];
 
         /*Copy data to temp arrays*/
         for (int i = 0; i < leftArraySize; ++i)
@@ -51,7 +51,7 @@ class MergeSort implements Properites {
         }
     }
 
-    private void sort(int arr[], int left, int right) {
+    void sort(int[] arr, int left, int right) {
         if (left < right) {
             // Find the middle point
             int middle = left + (right - left) / 2;
@@ -63,28 +63,6 @@ class MergeSort implements Properites {
             // Merge the sorted halves
             merge(arr, left, middle, right);
         }
-    }
-
-    /* A utility function to print array of size n */
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Driver code
-    public void testCase1() {
-        int arr[] = {12, 11, 13, 5, 6, 7};
-
-        System.out.println("Given Array");
-        printArray(arr);
-
-        MergeSort ob = new MergeSort();
-        ob.sort(arr, 0, arr.length - 1);
-
-        System.out.println("\nSorted array");
-        printArray(arr);
     }
 
     @Override
@@ -102,5 +80,3 @@ class MergeSort implements Properites {
         return "n";
     }
 }
-/* This code is contributed by Rajat Mishra */
-

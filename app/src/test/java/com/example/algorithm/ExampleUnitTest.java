@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 
 import android.util.Log;
 
+import java.util.Arrays;
+
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -13,10 +15,13 @@ import android.util.Log;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() {
+    public void merge_sort() {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+
         MergeSort sort = new MergeSort();
-        sort.testCase1();
-        //Log.d("TAG", "addition_isCorrect: ");
-        assertEquals(4, 2 + 2);
+        sort.sort(arr, 0, arr.length - 1);
+        int[] expectedArr = {5, 6, 7, 11, 12, 13};
+        assertEquals(Arrays.toString(expectedArr), Arrays.toString(arr));
+
     }
 }
