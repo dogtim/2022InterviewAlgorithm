@@ -2,85 +2,55 @@ package com.example.algorithm.tree;
 
 import org.w3c.dom.Node;
 
+import java.util.LinkedList;
+
 // https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 // This class implement above contents, help me to practice the common traversal of tree
 // There are three fundamental Tree Traversals, Inorder, Preorder and Postorder
 public class TreeTraverse {
 
-    // Build the tree
-    public void buildTree() {
-        TreeNode tree = new TreeNode(1);
-        tree.left = new TreeNode(2);
-        tree.right = new TreeNode(3);
-        tree.left.left = new TreeNode(4);
-        tree.left.right = new TreeNode(5);
-
-        System.out.println(
-                "Preorder traversal of binary tree is ");
-        printPreorder(tree);
-
-        System.out.println(
-                "\nInorder traversal of binary tree is ");
-        printInorder(tree);
-
-        System.out.println(
-                "\nPostorder traversal of binary tree is ");
-        printPostorder(tree);
-    }
-
     /* Given a binary tree, print its nodes according to the
       "bottom-up" postorder traversal. */
-    private void printPostorder(TreeNode node) {
+    public void postorder(TreeNode node, LinkedList<Integer> visitedSequence) {
         if (node == null)
             return;
 
         // first recur on left subtree
-        printPostorder(node.left);
+        postorder(node.left, visitedSequence);
 
         // then recur on right subtree
-        printPostorder(node.right);
+        postorder(node.right, visitedSequence);
 
         // now deal with the node
-        System.out.print(node.value + " ");
+        visitedSequence.add(node.value);
     }
 
     /* Given a binary tree, print its nodes in inorder*/
-    void printInorder(TreeNode node) {
+    public void inorder(TreeNode node, LinkedList<Integer> visitedSequence) {
         if (node == null)
             return;
 
         /* first recur on left child */
-        printInorder(node.left);
+        inorder(node.left, visitedSequence);
 
-        /* then print the data of node */
-        System.out.print(node.value + " ");
+        visitedSequence.add(node.value);
 
         /* now recur on right child */
-        printInorder(node.right);
+        inorder(node.right, visitedSequence);
     }
 
     /* Given a binary tree, print its nodes in preorder*/
-    void printPreorder(TreeNode node) {
+    public void preorder(TreeNode node, LinkedList<Integer> visitedSequence) {
         if (node == null)
             return;
 
         /* first print data of node */
-        System.out.print(node.value + " ");
+        visitedSequence.add(node.value);
 
         /* then recur on left subtree */
-        printPreorder(node.left);
+        preorder(node.left, visitedSequence);
 
         /* now recur on right subtree */
-        printPreorder(node.right);
-    }
-}
-
-class TreeNode {
-    int value;
-    TreeNode left, right;
-
-    public TreeNode(int value) {
-        this.value = value;
-        left = right = null;
+        preorder(node.right, visitedSequence);
     }
 }
