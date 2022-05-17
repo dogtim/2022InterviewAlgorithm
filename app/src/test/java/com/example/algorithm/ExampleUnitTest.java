@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 
 import com.example.algorithm.sorting.BubbleSort;
 import com.example.algorithm.sorting.HeapSort;
+import com.example.algorithm.sorting.InsertionSort;
 import com.example.algorithm.sorting.MergeSort;
 import com.example.algorithm.sorting.QuickSort;
 
@@ -50,6 +51,16 @@ public class ExampleUnitTest {
         int[] arr = {12, 11, 13, 5, 6, 7};
 
         HeapSort sort = new HeapSort();
+        sort.sort(arr);
+        int[] expectedArr = {5, 6, 7, 11, 12, 13};
+        assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void insertion_sort() {
+        int[] arr = {12, 11, 13, 5, 6, 7};
+
+        InsertionSort sort = new InsertionSort();
         sort.sort(arr);
         int[] expectedArr = {5, 6, 7, 11, 12, 13};
         assertArrayEquals(expectedArr, arr);
