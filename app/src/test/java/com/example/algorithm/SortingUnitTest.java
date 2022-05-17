@@ -15,7 +15,7 @@ import com.example.algorithm.sorting.QuickSort;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ExampleUnitTest {
+public class SortingUnitTest {
     @Test
     public void merge_sort() {
         int[] arr = {12, 11, 13, 5, 6, 7};
