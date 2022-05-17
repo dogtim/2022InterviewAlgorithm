@@ -1,6 +1,6 @@
 package com.example.algorithm;
 
-public interface Properites {
+public interface Properties {
     // Average
     String averageTimeComplexity();
     String worstTimeComplexity();

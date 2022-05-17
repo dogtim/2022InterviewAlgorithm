@@ -1,6 +1,6 @@
 package com.example.algorithm.sorting;
 
-import com.example.algorithm.Properites;
+import com.example.algorithm.Properties;
 
 /*
  Reference: https://www.geeksforgeeks.org/heap-sort/, http://www.btechsmartclass.com/data_structures/heap-sort.html
@@ -11,7 +11,7 @@ import com.example.algorithm.Properites;
     Step 5 - Repeat the same until Min Heap becomes empty.
     Step 6 - Display the sorted list
  */
-public class HeapSort implements Properites {
+public class HeapSort implements Properties {
 
     public void sort(int[] arr) {
         int length = arr.length;

@@ -1,13 +1,13 @@
 package com.example.algorithm.sorting;
 
-import com.example.algorithm.Properites;
+import com.example.algorithm.Properties;
 
 /*
  Reference: https://www.geeksforgeeks.org/bubble-sort/
  Time Complexity:
  Space Complexity:
  */
-public class BubbleSort implements Properites {
+public class BubbleSort implements Properties {
 
     public void sort(int[] arr) {
         int n = arr.length;

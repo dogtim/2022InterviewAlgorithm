@@ -1,13 +1,13 @@
 package com.example.algorithm.sorting;
 
-import com.example.algorithm.Properites;
+import com.example.algorithm.Properties;
 
 /*
  Reference: https://www.geeksforgeeks.org/quick-sort/
  Time Complexity:
  Space Complexity:
  */
-public class QuickSort implements Properites {
+public class QuickSort implements Properties {
     /* This function takes last element as pivot, places
        the pivot element at its correct position in sorted
        array, and places all smaller (smaller than pivot)
