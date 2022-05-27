@@ -1,3 +1,11 @@
-# 2022 Interview Algorithm
+# 2022 Interview Resource
 
-This repository used to practice Algorithm and Data Structure
+# Algorithm
+
+# Data Structure
+
+# Design Pattern
+
+# Architecture Design
+
+# Others
