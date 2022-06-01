@@ -3,6 +3,7 @@ package com.example.algorithm;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
 import org.junit.Test;
@@ -33,5 +34,11 @@ public class ExamTest {
         assertEquals("NO", p.result("a_e"));
         assertEquals("NO", p.result("ef_fb"));
         assertEquals("NO", p.result("_dfdfe"));
+    }
+
+    @Test
+    public void printEnemyBoard() {
+        EnemyBoard enemyBoard = new EnemyBoard();
+        enemyBoard.random(3, 3, 9);
     }
 }
