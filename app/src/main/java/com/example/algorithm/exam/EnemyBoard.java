@@ -42,9 +42,7 @@ public class EnemyBoard {
             array.remove(selectIndex);
         }
 
-        // outputArray: 1, 3, 9
         for (int i = 0; i < originalLength; i++) {
-            // print to matrix
             if (i % width == 0 && i != 0) {
                 System.out.print("\n");
             }
@@ -54,6 +52,5 @@ public class EnemyBoard {
                 System.out.print("0,");
             }
         }
-
     }
 }
