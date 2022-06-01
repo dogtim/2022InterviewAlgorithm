@@ -1,8 +1,11 @@
 package com.example.algorithm;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
+import com.example.algorithm.exam.BreakingPermutationString;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
@@ -34,6 +37,16 @@ public class ExamTest {
         assertEquals("NO", p.result("a_e"));
         assertEquals("NO", p.result("ef_fb"));
         assertEquals("NO", p.result("_dfdfe"));
+    }
+
+    @Test
+    public void checkIfCanBreak() {
+        BreakingPermutationString bp = new BreakingPermutationString();
+
+        assertTrue(bp.checkIfCanBreak("abc","xya"));
+        assertTrue(bp.checkIfCanBreak("abrdft", "acvxyz"));
+        assertFalse(bp.checkIfCanBreak("abe", "acd"));
+        assertFalse(bp.checkIfCanBreak("bgdfrt", "acvxyz"));
     }
 
     @Test
