@@ -6,6 +6,8 @@ import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.example.algorithm.exam.BreakingPermutationString;
+import com.example.algorithm.exam.EncodingString;
+import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
@@ -54,4 +56,29 @@ public class ExamTest {
         EnemyBoard enemyBoard = new EnemyBoard();
         enemyBoard.random(3, 3, 9);
     }
+
+    @Test
+    public void encoding() {
+        EncodingString encodingString = new EncodingString();
+
+        String input = "222";
+        String encoded = encodingString.encode(input);
+        String decoded = encodingString.decode(encoded);
+
+        assertEquals(input, decoded);
+    }
+
+    @Test
+    public void encoding1() {
+        EncodingStringMapping encodingMapping = new EncodingStringMapping();
+        assertEquals("r", encodingMapping.encode("00"));
+        assertEquals("s", encodingMapping.encode("01"));
+        assertEquals("zz1", encodingMapping.encode("001"));
+        assertEquals("zz2", encodingMapping.encode("002"));
+        assertEquals("001", encodingMapping.decode("zz1"));
+
+        String input = "1001";
+        assertEquals(input, encodingMapping.decode(encodingMapping.encode(input)));
+    }
+
 }
