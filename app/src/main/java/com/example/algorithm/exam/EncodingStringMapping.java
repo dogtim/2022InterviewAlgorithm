@@ -9,20 +9,21 @@ output: [0-9a-z] ->
 To define the encode & decode by yourself.
 Create two HashMap to keep the mapping values
 
-Three char
-input: 001, output: z1
+Three char: count 17
+input: 000, output: zz0
+input: 001, output: zz1
 input: 002, output: z2
 input: 010, output: 3
 ...
 input: 222, output: q
 
-Two char
+Two char: count 11
 input: 00, output: r
 input: 01, output: s
 ....
 input: 22, output: z
 
-Two char
+One char: count 3
 input: 0, output: 0
 input: 1, output: 1
 input: 2, output: 2

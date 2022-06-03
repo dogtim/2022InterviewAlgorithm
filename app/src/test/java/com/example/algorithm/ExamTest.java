@@ -1,5 +1,6 @@
 package com.example.algorithm;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -11,6 +12,8 @@ import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
+import com.example.algorithm.exam.TheSumCloseToTarget;
+
 import org.junit.Test;
 
 /**
@@ -81,4 +84,13 @@ public class ExamTest {
         assertEquals(input, encodingMapping.decode(encodingMapping.encode(input)));
     }
 
+    @Test
+    public void sumCloseToTarget() {
+        TheSumCloseToTarget exam = new TheSumCloseToTarget();
+        int[] array1 = {-1, 3, 8, 2, 9, 5};
+        int[] array2 = { 4, 1, 2, 10, 5, 20};
+        int[] expected = {3, 20};
+        assertArrayEquals(expected, exam.bruteForce(array1, array2, 24));
+        assertArrayEquals(expected, exam.optimize(array1, array2, 24));
+    }
 }
