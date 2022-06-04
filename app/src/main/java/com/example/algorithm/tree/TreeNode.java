@@ -1,11 +1,16 @@
 package com.example.algorithm.tree;
 
 public class TreeNode {
-    int value;
+    public int value;
     public TreeNode left, right;
 
-    public TreeNode(int value) {
+    public TreeNode(int value, TreeNode left, TreeNode right) {
         this.value = value;
-        left = right = null;
+        this.left = left;
+        this.right = right;
+    }
+
+    public TreeNode(int value) {
+           this(value, null, null);
     }
 }
