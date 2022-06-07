@@ -1,12 +1,6 @@
 package com.example.algorithm.exam;
 
-import android.icu.util.Output;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
 
 // https://leetcode.com/problems/check-if-a-string-can-break-another-string/
 public class BreakingPermutationString {

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.example.algorithm.exam.BreakingPermutationString;
@@ -11,10 +12,13 @@ import com.example.algorithm.exam.EncodingString;
 import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
+import com.example.algorithm.exam.PartOfAnagrams;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
 import com.example.algorithm.exam.TheSumCloseToTarget;
 
 import org.junit.Test;
+
+import java.util.List;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -93,4 +97,17 @@ public class ExamTest {
         assertArrayEquals(expected, exam.bruteForce(array1, array2, 24));
         assertArrayEquals(expected, exam.optimize(array1, array2, 24));
     }
+
+    @Test
+    public void PartOfAnagrams() {
+        PartOfAnagrams exam = new PartOfAnagrams();
+        String s = "eattea";
+        String p = "tea";
+        int[] array = {0, 3};
+        List<Integer> result = exam.findAnagrams(s, p);
+        for(int i = 0; i < array.length; i++) {
+            assertEquals(array[i], result.get(i).intValue());
+        }
+    }
+
 }
