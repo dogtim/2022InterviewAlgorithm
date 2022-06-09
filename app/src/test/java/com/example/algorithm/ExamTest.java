@@ -14,6 +14,7 @@ import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
+import com.example.algorithm.exam.Sum3IntegerZero;
 import com.example.algorithm.exam.TheSumCloseToTarget;
 
 import org.junit.Test;
@@ -30,11 +31,11 @@ public class ExamTest {
     @Test
     public void removeAdjacent_inorder() {
         RemoveAdjacentLetter letter = new RemoveAdjacentLetter();
-        int result = letter.minimumValue("eedcc", new int[] {1, 2, 5, 3, 2});
-        assertEquals(2+5+3, result);
-        assertEquals(5, letter.minimumValue("aaa", new int[] {1, 2, 5}));
-        assertEquals(21, letter.minimumValue("ababa", new int[] {1, 2, 5, 3, 10}));
-        assertEquals(16, letter.minimumValue("baaab", new int[] {1, 2, 5, 3, 10}));
+        int result = letter.minimumValue("eedcc", new int[]{1, 2, 5, 3, 2});
+        assertEquals(2 + 5 + 3, result);
+        assertEquals(5, letter.minimumValue("aaa", new int[]{1, 2, 5}));
+        assertEquals(21, letter.minimumValue("ababa", new int[]{1, 2, 5, 3, 10}));
+        assertEquals(16, letter.minimumValue("baaab", new int[]{1, 2, 5, 3, 10}));
     }
 
     @Test
@@ -52,7 +53,7 @@ public class ExamTest {
     public void checkIfCanBreak() {
         BreakingPermutationString bp = new BreakingPermutationString();
 
-        assertTrue(bp.checkIfCanBreak("abc","xya"));
+        assertTrue(bp.checkIfCanBreak("abc", "xya"));
         assertTrue(bp.checkIfCanBreak("abrdft", "acvxyz"));
         assertFalse(bp.checkIfCanBreak("abe", "acd"));
         assertFalse(bp.checkIfCanBreak("bgdfrt", "acvxyz"));
@@ -92,7 +93,7 @@ public class ExamTest {
     public void sumCloseToTarget() {
         TheSumCloseToTarget exam = new TheSumCloseToTarget();
         int[] array1 = {-1, 3, 8, 2, 9, 5};
-        int[] array2 = { 4, 1, 2, 10, 5, 20};
+        int[] array2 = {4, 1, 2, 10, 5, 20};
         int[] expected = {3, 20};
         assertArrayEquals(expected, exam.bruteForce(array1, array2, 24));
         assertArrayEquals(expected, exam.optimize(array1, array2, 24));
@@ -105,9 +106,27 @@ public class ExamTest {
         String p = "tea";
         int[] array = {0, 3};
         List<Integer> result = exam.findAnagrams(s, p);
-        for(int i = 0; i < array.length; i++) {
+
+        for (int i = 0; i < array.length; i++) {
             assertEquals(array[i], result.get(i).intValue());
         }
     }
 
+    @Test
+    public void Sum3IntegerZero() {
+        // Input: nums = [-1,0,1,2,-1,-4]
+        int[] nums = {-1, 0, 1, 2, -1, -4};
+        Sum3IntegerZero zero = new Sum3IntegerZero();
+        List<List<Integer>> result = zero.findTheList(nums);
+
+        // expected output:  [[-1,-1,2],[-1,0,1]]
+        int[][] outputs = {{-1, -1, 2}, {-1, 0, 1}};
+
+        for (int i = 0; i < outputs.length; i++) {
+            for (int j = 0; j < outputs[0].length; j++) {
+                assertEquals(outputs[i][j], (int) result.get(i).get(j));
+            }
+        }
+
+    }
 }

@@ -53,10 +53,4 @@ public class BuildBinaryTree {
         return result;
     }
 
-
-    /*
-
-
-
-    * */
 }
