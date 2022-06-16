@@ -15,6 +15,7 @@ import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
 import com.example.algorithm.exam.Sum3IntegerZero;
+import com.example.algorithm.exam.TheNumOfChangingCharacter;
 import com.example.algorithm.exam.TheSumCloseToTarget;
 
 import org.junit.Test;
@@ -127,6 +128,23 @@ public class ExamTest {
                 assertEquals(outputs[i][j], (int) result.get(i).get(j));
             }
         }
+    }
 
+    @Test
+    public void theNumOfChangingCharacter() {
+        TheNumOfChangingCharacter zero = new TheNumOfChangingCharacter();
+        assertEquals(1, zero.number("aaa"));
+        assertEquals(0, zero.number("aa"));
+        assertEquals(2, zero.number("bbaaabbb"));
+        assertEquals(3, zero.number("bbaaaaaabbb"));
+    }
+
+    @Test
+    public void bitCount() {
+        TheNumOfChangingCharacter zero = new TheNumOfChangingCharacter();
+        assertEquals(1, zero.number("aaa"));
+        assertEquals(0, zero.number("aa"));
+        assertEquals(2, zero.number("bbaaabbb"));
+        assertEquals(3, zero.number("bbaaaaaabbb"));
     }
 }
