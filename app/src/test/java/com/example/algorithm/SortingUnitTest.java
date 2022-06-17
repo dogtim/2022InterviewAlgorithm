@@ -75,7 +75,7 @@ public class SortingUnitTest {
         assertArrayEquals(expectedArr, sort.sortByArraySort(arr));
 
         Integer[] arrInteger = {0, 1};
-        Integer[] expectedArrInteger = {, 0};
+        Integer[] expectedArrInteger = {1, 0};
         assertArrayEquals(expectedArrInteger, sort.descendingSort(arrInteger));
     }
 }
