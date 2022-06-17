@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import com.example.algorithm.sorting.BubbleSort;
+import com.example.algorithm.sorting.ComparableSort;
 import com.example.algorithm.sorting.HeapSort;
 import com.example.algorithm.sorting.InsertionSort;
 import com.example.algorithm.sorting.MergeSort;
@@ -64,5 +65,17 @@ public class SortingUnitTest {
         sort.sort(arr);
         int[] expectedArr = {5, 6, 7, 11, 12, 13};
         assertArrayEquals(expectedArr, arr);
+    }
+
+    @Test
+    public void comparableSort() {
+        int[][] arr = {{0, 10}, {0, 9}, {1, 10}};
+        ComparableSort sort = new ComparableSort();
+        int[][] expectedArr = {{0, 9}, {0, 10}, {1, 10}};
+        assertArrayEquals(expectedArr, sort.sortByArraySort(arr));
+
+        Integer[] arrInteger = {0, 1};
+        Integer[] expectedArrInteger = {, 0};
+        assertArrayEquals(expectedArrInteger, sort.descendingSort(arrInteger));
     }
 }
