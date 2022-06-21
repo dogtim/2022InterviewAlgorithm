@@ -11,12 +11,14 @@ import com.example.algorithm.exam.BreakingPermutationString;
 import com.example.algorithm.exam.EncodingString;
 import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
+import com.example.algorithm.exam.ranges.FloatPointsInTheRanges;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
 import com.example.algorithm.exam.RemoveAdjacentLetter;
 import com.example.algorithm.exam.Sum3IntegerZero;
 import com.example.algorithm.exam.TheNumOfChangingCharacter;
 import com.example.algorithm.exam.TheSumCloseToTarget;
+import com.example.algorithm.exam.ranges.IntegerPointsInTheRanges;
 
 import org.junit.Test;
 
@@ -146,5 +148,30 @@ public class ExamTest {
         assertEquals(0, zero.number("aa"));
         assertEquals(2, zero.number("bbaaabbb"));
         assertEquals(3, zero.number("bbaaaaaabbb"));
+    }
+
+    @Test
+    public void floatInTheRanges() {
+        FloatPointsInTheRanges floatRanges = new FloatPointsInTheRanges();
+        floatRanges.addRange(-1.1111f, 2.00001f);
+        assertTrue(floatRanges.isInRange(-1.1111f));
+        assertFalse(floatRanges.isInRange(-1.1112f));
+        assertFalse(floatRanges.isInRange(2.00001f));
+
+        floatRanges.addRange(-1.1111f, 3.00001f);
+        assertTrue(floatRanges.isInRange(2.00001f));
+    }
+
+    @Test
+    public void IntegerInTheRanges() {
+        IntegerPointsInTheRanges intRanges = new IntegerPointsInTheRanges();
+        intRanges.addRange(-1, 2);
+        assertTrue(intRanges.isInRange(-1));
+        assertFalse(intRanges.isInRange(-2));
+        assertFalse(intRanges.isInRange(2));
+
+        intRanges.addRange(0, intRanges.OFFSET / 4);
+        assertTrue(intRanges.isInRange(0));
+        assertFalse(intRanges.isInRange(-2));
     }
 }
