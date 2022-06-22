@@ -11,6 +11,7 @@ import com.example.algorithm.exam.BreakingPermutationString;
 import com.example.algorithm.exam.EncodingString;
 import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
+import com.example.algorithm.exam.MatrixRelationship;
 import com.example.algorithm.exam.ranges.FloatPointsInTheRanges;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
@@ -173,5 +174,12 @@ public class ExamTest {
         intRanges.addRange(0, intRanges.OFFSET / 4);
         assertTrue(intRanges.isInRange(0));
         assertFalse(intRanges.isInRange(-2));
+    }
+
+    @Test
+    public void matrixRelation() {
+        MatrixRelationship relationship = new MatrixRelationship();
+        String[] relationships = {"1L2", "1L3", "2L3"};
+        relationship.parse(3, relationships);
     }
 }
