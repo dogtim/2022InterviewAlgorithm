@@ -12,6 +12,7 @@ import com.example.algorithm.exam.EncodingString;
 import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MatrixRelationship;
+import com.example.algorithm.exam.RandomizedSet;
 import com.example.algorithm.exam.ranges.FloatPointsInTheRanges;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
@@ -181,5 +182,16 @@ public class ExamTest {
         MatrixRelationship relationship = new MatrixRelationship();
         String[] relationships = {"1L2", "1L3", "2L3"};
         relationship.parse(3, relationships);
+    }
+
+    @Test
+    public void randomizedSet() {
+        RandomizedSet relationship = new RandomizedSet();
+        assertTrue(relationship.insert(1));
+        assertTrue(relationship.insert(3));
+        assertTrue(relationship.insert(2));
+        assertFalse(relationship.remove(4));
+        assertFalse(relationship.insert(3));
+        assertTrue(relationship.remove(3));
     }
 }
