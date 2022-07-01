@@ -13,6 +13,7 @@ import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.MatrixRelationship;
 import com.example.algorithm.exam.RandomizedSet;
+import com.example.algorithm.exam.RemoveUselessParenthesis;
 import com.example.algorithm.exam.ranges.FloatPointsInTheRanges;
 import com.example.algorithm.exam.MakePalindromeString;
 import com.example.algorithm.exam.PartOfAnagrams;
@@ -193,5 +194,14 @@ public class ExamTest {
         assertFalse(relationship.remove(4));
         assertFalse(relationship.insert(3));
         assertTrue(relationship.remove(3));
+    }
+
+    @Test
+    public void removeUselessParenthesis() {
+        RemoveUselessParenthesis remove = new RemoveUselessParenthesis();
+        assertEquals("A", remove.filterString("((A"));
+        assertEquals("(A)", remove.filterString("((A)"));
+        assertEquals("ADDDDD()", remove.filterString("(ADDDDD()"));
+        assertEquals("(AD)DDDD()", remove.filterString("(AD)))DDDD()"));
     }
 }
