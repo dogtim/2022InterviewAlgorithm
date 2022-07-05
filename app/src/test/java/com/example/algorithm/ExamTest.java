@@ -11,6 +11,7 @@ import com.example.algorithm.exam.BreakingPermutationString;
 import com.example.algorithm.exam.EncodingString;
 import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
+import com.example.algorithm.exam.GetMaxArea;
 import com.example.algorithm.exam.MatrixRelationship;
 import com.example.algorithm.exam.RandomizedSet;
 import com.example.algorithm.exam.RemoveUselessParenthesis;
@@ -203,5 +204,19 @@ public class ExamTest {
         assertEquals("(A)", remove.filterString("((A)"));
         assertEquals("ADDDDD()", remove.filterString("(ADDDDD()"));
         assertEquals("(AD)DDDD()", remove.filterString("(AD)))DDDD()"));
+    }
+
+    @Test
+    public void maxArea() {
+        GetMaxArea area = new GetMaxArea();
+        int[][] testArray = {
+                {0,1,0, 1},
+                {1,1,0, 1},
+                {1,1,0, 1},
+                {0,1,0, 1}
+        };
+
+        int result = area.getMaxArea(testArray);
+        assertEquals(6, result);
     }
 }
