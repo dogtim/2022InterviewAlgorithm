@@ -13,6 +13,7 @@ import com.example.algorithm.exam.EncodingStringMapping;
 import com.example.algorithm.exam.EnemyBoard;
 import com.example.algorithm.exam.GetMaxArea;
 import com.example.algorithm.exam.MatrixRelationship;
+import com.example.algorithm.exam.OverOneCount;
 import com.example.algorithm.exam.RandomizedSet;
 import com.example.algorithm.exam.RemoveUselessParenthesis;
 import com.example.algorithm.exam.ranges.FloatPointsInTheRanges;
@@ -210,13 +211,22 @@ public class ExamTest {
     public void maxArea() {
         GetMaxArea area = new GetMaxArea();
         int[][] testArray = {
-                {0,1,0, 1},
-                {1,1,0, 1},
-                {1,1,0, 1},
-                {0,1,0, 1}
+                {0, 1, 0, 1},
+                {1, 1, 0, 1},
+                {1, 1, 0, 1},
+                {0, 1, 0, 1}
         };
 
         int result = area.getMaxArea(testArray);
         assertEquals(6, result);
     }
+
+    @Test
+    public void overOneCount() {
+        OverOneCount count = new OverOneCount();
+        assertEquals(4, count.count(new int[]{-1, -2, 3, 5}));
+        assertEquals(5, count.count(new int[]{-3, 2, -3, 4, 2}));
+        assertEquals(1, count.count(new int[]{9, 1, 2, 3, 4}));
+    }
+
 }
